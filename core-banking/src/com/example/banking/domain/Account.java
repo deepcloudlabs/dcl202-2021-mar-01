@@ -4,14 +4,15 @@ package com.example.banking.domain;
 public class Account extends Object {
 	// private : information hiding principle
 	private String iban; // field/state/attribute
-	private double balance; // < 0.0 -> illegal state
+	double balance; // < 0.0 -> illegal state
+	// default permission -> package private
 	
 	// constructor -> initialization -> field(s)
 	// Alt+Shift+S -> Generate source code
 	public Account(String iban, double balance) {
 		this.iban = iban;
 		this.balance = balance;
-	}
+	} 
 
 	// getter methods
 	public String getIban() {
