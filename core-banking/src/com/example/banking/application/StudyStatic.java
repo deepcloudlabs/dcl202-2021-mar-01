@@ -4,6 +4,7 @@ import com.example.banking.domain.Account;
 import com.example.banking.domain.CheckingAccount;
 import static com.example.banking.domain.Account.getNumberOfAccounts;
 
+@SuppressWarnings({"static-access","unused"})
 public class StudyStatic {
 
 	public static void main(String[] args) {

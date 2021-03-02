@@ -1,5 +1,6 @@
 package com.example;
 
+@SuppressWarnings("unused")
 public abstract interface Fun {
 	public static final int x = 42; // global constant
 	abstract public void fun();

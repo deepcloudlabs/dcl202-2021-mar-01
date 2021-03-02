@@ -2,6 +2,7 @@ package com.example;
 
 import java.math.BigDecimal;
 
+@SuppressWarnings("unused")
 public class StudyFloatingPointTypes {
 
 	public static void main(String[] args) {

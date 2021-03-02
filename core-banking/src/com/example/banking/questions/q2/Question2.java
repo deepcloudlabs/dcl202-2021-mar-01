@@ -1,5 +1,6 @@
 package com.example.banking.questions.q2;
 
+@SuppressWarnings("unused")
 public class Question2 {
 	public static void main(String[] args) {
 		B b = new B();
@@ -11,6 +12,7 @@ public class Question2 {
 	}
 }
 
+@SuppressWarnings("unused")
 class A {
 	private D d = new D();
 
@@ -19,6 +21,7 @@ class A {
 	}
 }
 
+@SuppressWarnings("unused")
 class B extends A {
 	private E e = new E();
 
@@ -27,18 +30,21 @@ class B extends A {
 	}
 }
 
+@SuppressWarnings("unused")
 class C {
 	public C() {
 		System.out.println("C's constructor");
 	}
 }
 
+@SuppressWarnings("unused")
 class D {
 	public D() {
 		System.out.println("D's constructor");
 	}
 }
 
+@SuppressWarnings("unused")
 class E {
 	private C c = new C();
 

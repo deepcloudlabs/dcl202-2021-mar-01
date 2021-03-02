@@ -22,6 +22,7 @@ class C extends D {
 
 // 2. Immutability
 
+@SuppressWarnings("unused")
 class E {
 	private final int x = 42; // constant
 	private final int y; // constant

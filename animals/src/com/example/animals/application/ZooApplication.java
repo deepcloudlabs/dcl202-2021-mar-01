@@ -2,7 +2,6 @@ package com.example.animals.application;
 
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 import com.example.animals.domain.Animal;
 import com.example.animals.domain.Cat;
