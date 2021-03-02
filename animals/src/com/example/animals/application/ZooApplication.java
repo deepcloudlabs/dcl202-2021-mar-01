@@ -29,18 +29,16 @@ public class ZooApplication {
 			}
 		}
 		Consumer<Animal> walk = Animal::walk;
-		Consumer<Animal> eat = Animal::walk;
+		Consumer<Animal> eat = Zoo::eat;
 		Consumer<Animal> playIfPet = animal -> {
 			if (animal instanceof Pet) ((Pet)animal).play() ;
 		};
 		System.err.println("parallel solution starts now...");
 		animals.parallelStream().forEach(walk.andThen(eat).andThen(playIfPet));
-		Predicate<Animal> isPet = Pet.class::isInstance;
-		Predicate<Animal> isWild = isPet.negate();
 		var numberOfPets = 
-				animals.stream().parallel().filter(isPet).count();
+				animals.stream().parallel().filter(Zoo::isPet).count();
 		var numberOfWild = 
-				animals.stream().parallel().filter(isWild).count();
+				animals.stream().parallel().filter(Zoo::isWild).count();
 		System.err.println("Number of pets is "+numberOfPets);
 		System.err.println("Number of wild animals is "+numberOfWild);
 	    numberOfPets = 0;
@@ -50,4 +48,16 @@ public class ZooApplication {
 	    }	
 	}
 
+}
+
+interface Zoo {
+	public static boolean isPet(Animal animal) {
+		return Pet.class.isInstance(animal);
+	}
+	public static boolean isWild(Animal animal) {
+		return !isPet(animal);
+	}
+	public static void eat(Animal animal) {
+		animal.eat();
+	}
 }
