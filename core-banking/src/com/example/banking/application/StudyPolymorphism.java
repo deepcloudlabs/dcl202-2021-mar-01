@@ -4,10 +4,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.example.banking.domain.Account;
 import com.example.banking.domain.CheckingAccount;
+import com.example.banking.domain.InsufficientBalanceException;
 
 public class StudyPolymorphism {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InsufficientBalanceException {
 		// Class -> Encapsulation ( + information hiding principle)
 		// Inheritance -> Reusability
 		// Polymorphism -> Agility (Open/Close Principle)

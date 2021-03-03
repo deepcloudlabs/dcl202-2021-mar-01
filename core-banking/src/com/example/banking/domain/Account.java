@@ -44,31 +44,32 @@ public class Account extends Object {
 		return balance;
 	}
 	
-	// business methods
-	public boolean deposit(final double amount) {
+	// business methods 
+	public void deposit(final double amount) {
 		getNumberOfAccounts();
 		// validation
 		if (amount <= 0) {
-			return false;
+			throw new IllegalArgumentException("Amount cannot be negative.");
 		}
 		// business logic
 		this.balance = this.balance + amount ;
-		return true;
 	}
-	
-	public boolean withdraw(final double amount) {
+	// Exceptions: 1) Checked Exceptions 2) Unchecked Exceptions
+	//                Business Exception    Run-time Exception
+	public void withdraw(final double amount) throws InsufficientBalanceException {
 		System.out.println("Account::withdraw");
 		// validation
 		if (amount <= 0) {
-			return false;
+			throw new IllegalArgumentException("Amount cannot be negative.");
 		}
 		// business rule
 		if (amount > balance) {
-			return false;
+			throw new InsufficientBalanceException(
+				"Your balance does not cover your expenses", amount-balance
+				);
 		}
 		// business logic
 		this.balance = this.balance - amount;
-		return true;
 	}
 	// override toString()
 	@Override

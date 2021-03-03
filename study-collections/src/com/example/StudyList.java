@@ -24,7 +24,7 @@ public class StudyList {
 		numbers.add(4);
 		numbers.add(15);
         System.out.println(numbers);
-        System.out.println(numbers.get(0)); // 4
+        System.out.println(numbers.get(-2)); // 4
         System.out.println(numbers.get(4)); // 23
         numbers.add(3,15); // 4, 42, 16, 15, 4, 23, 8, ...
         System.out.println(numbers);

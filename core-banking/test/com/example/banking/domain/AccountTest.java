@@ -20,8 +20,12 @@ class AccountTest {
 	@Test
 	void withdrawNegativeAmount_then_fails() {
 		Account account = new Account("tr1", 10_000);
-		boolean result = account.withdraw(-1);
-		assertFalse(result);
+		var e = assertThrows(
+			IllegalArgumentException.class, 
+			() -> account.withdraw(-1) 
+		);
+		assertEquals(10_000, account.getBalance());
+		assertEquals("Amount cannot be negative.", e.getMessage());
 	}
 
 }
