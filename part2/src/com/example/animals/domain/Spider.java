@@ -14,4 +14,10 @@ public class Spider extends Animal {
 		System.out.println("Spider is eating now...");
 	}
 
+	@Override
+	public String toString() {
+		return "Spider [legs=" + getLegs() + "]";
+	}
+
+	
 }

@@ -35,4 +35,9 @@ public class Cat extends Animal implements Pet {
 		System.out.println(String.format("%s is eating now...", name));
 	}
 
+	@Override
+	public String toString() {
+		return "Cat [name=" + name + ", legs=" + getLegs() + "]";
+	}
+
 }

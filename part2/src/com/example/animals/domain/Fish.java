@@ -35,5 +35,10 @@ public class Fish extends Animal implements Pet {
 	public void walk() {
 		System.out.println(String.format("%s is swimming now...", name));
 	}
+
+	@Override
+	public String toString() {
+		return "Fish [name=" + name + ", legs= "+getLegs()+" ]";
+	}
 	
 }

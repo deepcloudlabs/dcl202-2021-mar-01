@@ -48,6 +48,22 @@ public class Customer {
 		return Optional.empty();
 	}
 
+	public double getTotalBalance() {
+		var total = 0;
+		for (var account : accounts) {
+			total += account.getBalance();
+		}
+		return total;
+	}
+	
+	public double getTotalBalance8() {
+		return accounts.stream()
+				       .parallel()
+				       //.mapToDouble(account -> account.getBalance())
+				       .mapToDouble(Account::getBalance)
+				       .sum(); // terminal method
+	}
+	
 	public int getNumberOfAccounts() {
 		return accounts.size();
 	}
