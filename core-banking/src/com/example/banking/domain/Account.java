@@ -46,13 +46,18 @@ public class Account extends Object {
 	
 	// business methods 
 	public void deposit(final double amount) {
+		var oldBalance = this.balance;
 		getNumberOfAccounts();
 		// validation
 		if (amount <= 0) {
 			throw new IllegalArgumentException("Amount cannot be negative.");
 		}
 		// business logic
-		this.balance = this.balance + amount ;
+		this.balance = this.balance + amount - 1.0 ;
+		assert (oldBalance + amount) == this.balance; // true
+		// if it is false then throws AssertionError
+		// 1. production -> discards assert  
+		// 2. debug -> java -ea -enableassertion
 	}
 	// Exceptions: 1) Checked Exceptions 2) Unchecked Exceptions
 	//                Business Exception    Run-time Exception
