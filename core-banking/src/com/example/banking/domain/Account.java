@@ -1,7 +1,13 @@
 package com.example.banking.domain;
 
+import java.io.Serializable;
+
 // Encapsulation: fields + methods
-public class Account extends Object {
+public class Account extends Object implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// private : information hiding principle
 	private final String iban; // field/state/attribute
 	double balance; // < 0.0 -> illegal state

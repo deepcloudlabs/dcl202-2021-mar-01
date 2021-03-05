@@ -1,11 +1,16 @@
 package com.example.banking.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 // DDD: Entity Class -> Persistent, Identity
-public class Customer {
+public class Customer implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final String identity; // does allow to change
 	private String fullName;
 	private List<Account> accounts;
@@ -67,4 +72,11 @@ public class Customer {
 	public int getNumberOfAccounts() {
 		return accounts.size();
 	}
+
+	@Override
+	public String toString() {
+		return "Customer [identity=" + identity + ", fullName=" + fullName + ", accounts=" + accounts + "]";
+	}
+	
+	
 }
