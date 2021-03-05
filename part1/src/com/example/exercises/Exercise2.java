@@ -1,7 +1,6 @@
 package com.example.exercises;
 
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.example.dao.CountryDao;
 import com.example.dao.InMemoryWorldDao;

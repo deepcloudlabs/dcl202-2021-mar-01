@@ -1,7 +1,8 @@
 package com.example.banking.application;
 
+@SuppressWarnings("finally")
 public class CatchMeIfYouCan {
-    public static int gun() {
+	public static int gun() {
     	try {
     		return 42;
     	} finally {
@@ -34,4 +35,5 @@ public class CatchMeIfYouCan {
 
 }
 
+@SuppressWarnings("serial")
 class MyRuntimeException extends RuntimeException { }

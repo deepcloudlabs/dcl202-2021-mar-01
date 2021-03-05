@@ -1,6 +1,5 @@
 package com.example.banking.application;
 
-import java.io.Closeable;
 import java.io.IOException;
 
 public class StudyTryWithResources1 {
